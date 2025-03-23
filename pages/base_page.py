@@ -15,9 +15,11 @@ class  BasePage:
         self.wait = WebDriverWait(driver, timeout=5)
 
     def open_main_page(self):
+        """ Открыть страницу заданную как URL """
         self.driver.get(self.driver.url)
 
     def scroll_to_element_and_click(self, button):
+        """ Поиск элемента при маленьком разрешении экрана"""
         actions = ActionChains(self.driver)
         actions.move_to_element(button).click().perform()
 
